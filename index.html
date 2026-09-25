@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoaib Hassan | BSCS Student & Cybersecurity Learner</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Portfolio of Shoaib Hassan - BSCS Undergraduate, Cybersecurity Beginner & Learner, Content Creator, SEO Enthusiast, and Founder of Savor of Baltistan (Pure Himalayan Shilajit).">
+  <meta name="keywords" content="Shoaib Hassan, Cybersecurity Learner, BSCS Student, Beginner, Content Creator, SEO, Savor of Baltistan, Pure Himalayan Shilajit, Pakistan">
+  <meta name="author" content="Shoaib Hassan">
+  <meta property="og:title" content="Shoaib Hassan | Student & Cybersecurity Learner">
+  <meta property="og:description" content="Explore my learning journey in computer science, beginner cybersecurity projects, content creation, and Savor of Baltistan.">
+  <meta property="og:image" content="assets/avatar.jpg">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b0f17'/><text x='50' y='68' font-size='55' font-family='sans-serif' font-weight='900' fill='%2338bdf8' text-anchor='middle'>SH</text></svg>">
+
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="cyan">
+  <!-- Interactive Canvas Backdrop -->
+  <canvas id="cyberCanvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Light Glow Orbs -->
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" id="navBrandLogo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">SHOAIB</span>
+        <span class="logo-dot">.</span>
+        <span class="logo-badge">LEARNER</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#about" class="nav-link" id="navLinkAbout"><span class="nav-num">01.</span> About Me</a>
+        <a href="#brand" class="nav-link" id="navLinkBrand"><span class="nav-num">02.</span> Savor of Baltistan</a>
+        <a href="#projects" class="nav-link" id="navLinkProjects"><span class="nav-num">03.</span> Learning Projects</a>
+        <a href="#experience" class="nav-link" id="navLinkExperience"><span class="nav-num">04.</span> Education & Journey</a>
+        <a href="#skills" class="nav-link" id="navLinkSkills"><span class="nav-num">05.</span> Skills & Learning</a>
+        <a href="#terminal" class="nav-link" id="navLinkTerminal"><span class="nav-num">06.</span> Terminal</a>
+        <a href="#contact" class="nav-link" id="navLinkContact"><span class="nav-num">07.</span> Contact</a>
+      </nav>
+
+      <!-- Nav Actions & Controls -->
+      <div class="nav-actions">
+        <!-- Theme Color Picker -->
+        <div class="theme-switcher" title="Switch Theme Color">
+          <button class="theme-dot cyan active" data-color="cyan" aria-label="Cyan Theme" id="btnThemeCyan"></button>
+          <button class="theme-dot emerald" data-color="emerald" aria-label="Emerald Theme" id="btnThemeEmerald"></button>
+          <button class="theme-dot violet" data-color="violet" aria-label="Violet Theme" id="btnThemeViolet"></button>
+        </div>
+
+        <!-- Audio Toggle -->
+        <button class="sound-toggle" id="soundToggle" title="Toggle Sound Feedback" aria-label="Toggle Sound">
+          <span class="sound-icon" id="soundIcon">🔇</span>
+          <span class="sound-label">SOUND OFF</span>
+        </button>
+
+        <!-- CTA Contact -->
+        <a href="#contact" class="btn btn-cyber-sm" id="btnNavConnect">
+          <span class="btn-scan"></span>
+          <span>SAY HELLO</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="system-status">
+        <span class="pulse-dot"></span>
+        <span>SHOAIB HASSAN // STUDENT PORTFOLIO</span>
+      </div>
+      <button class="close-drawer" id="closeDrawerBtn" aria-label="Close Navigation">&times;</button>
+    </div>
+    <nav class="drawer-links">
+      <a href="#about" class="drawer-link"><span class="nav-num">01.</span> About Me</a>
+      <a href="#brand" class="drawer-link"><span class="nav-num">02.</span> Savor of Baltistan</a>
+      <a href="#projects" class="drawer-link"><span class="nav-num">03.</span> Learning Projects</a>
+      <a href="#experience" class="drawer-link"><span class="nav-num">04.</span> Education & Experience</a>
+      <a href="#skills" class="drawer-link"><span class="nav-num">05.</span> Skills & Tools</a>
+      <a href="#terminal" class="drawer-link"><span class="nav-num">06.</span> Interactive CLI</a>
+      <a href="#contact" class="drawer-link"><span class="nav-num">07.</span> Contact</a>
+    </nav>
+    <div class="drawer-socials">
+      <a href="https://github.com/shoaibhassan10" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/shoaibhassan10/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.instagram.com/shoaibhassan_10" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.facebook.com/savorofbaltistan/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <!-- Hero Left Column -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="status-indicator"></span>
+            <span class="badge-text">STUDENT &amp; CYBERSECURITY LEARNER</span>
+          </div>
+
+          <div class="terminal-prefix">// WELCOME TO MY PORTFOLIO</div>
+          <h1 class="hero-title">
+            Shoaib <span class="gradient-text">Hassan</span>
+          </h1>
+
+          <div class="typewriter-container">
+            <span class="typewriter-prompt">&gt;</span>
+            <span class="typewriter-text" id="typewriterText">BSCS Student</span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <p class="hero-bio">
+            A computer science undergraduate and cybersecurity beginner currently learning bug bounty fundamentals, exploring web application security and ethical defense, and practicing hands-on problem solving. Alongside my studies, I am a self content creator, learning SEO and social media strategy, and running my venture <a href="https://www.facebook.com/savorofbaltistan/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-primary);text-decoration:underline;"><strong>Savor of Baltistan</strong> (Pure Himalayan Shilajit)</a>.
+          </p>
+
+          <div class="hero-meta-strip">
+            <div class="meta-item">
+              <span class="meta-icon">📍</span>
+              <span class="meta-val">Pakistan</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-icon">🎓</span>
+              <span class="meta-val">BSCS Undergraduate</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-icon">🏔️</span>
+              <span class="meta-val">Founder: Savor of Baltistan</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-icon">🌱</span>
+              <span class="meta-val">Active Beginner &amp; Learner</span>
+            </div>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary" id="btnHeroProjects">
+              <span class="btn-scan"></span>
+              <span class="btn-icon">📁</span>
+              <span>MY LEARNING PROJECTS</span>
+            </a>
+            <a href="#brand" class="btn btn-secondary" id="btnHeroBrand">
+              <span class="btn-icon">🏔️</span>
+              <span>SAVOR OF BALTISTAN</span>
+            </a>
+          </div>
+
+          <!-- Verified Channels / Social Badges -->
+          <div class="social-strip">
+            <span class="social-label">CONNECT:</span>
+            <a href="https://www.linkedin.com/in/shoaibhassan10/" target="_blank" rel="noopener noreferrer" class="social-chip" id="chipLinkedIn" title="LinkedIn Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/shoaibhassan10" target="_blank" rel="noopener noreferrer" class="social-chip" id="chipGithub" title="GitHub Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.instagram.com/shoaibhassan_10" target="_blank" rel="noopener noreferrer" class="social-chip" id="chipInstagram" title="Instagram Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/savorofbaltistan/" target="_blank" rel="noopener noreferrer" class="social-chip" id="chipFacebook" title="Savor of Baltistan Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: Profile Visual Card -->
+        <div class="hero-visual">
+          <div class="cyber-card-tilt" id="cyberCardTilt">
+            <div class="card-border-glow"></div>
+            
+            <div class="card-hud-header">
+              <span class="hud-code">STUDENT PROFILE</span>
+              <span class="hud-badge-online">● ACTIVE LEARNER</span>
+            </div>
+
+            <div class="avatar-frame" id="avatarDropZone" title="Drag & drop your LinkedIn profile picture here">
+              <img src="assets/avatar.jpg" alt="Shoaib Hassan" id="heroAvatarImg" class="avatar-img" loading="eager">
+              <div class="scan-grid"></div>
+            </div>
+
+            <div class="card-profile-info">
+              <h3 class="profile-name">Shoaib Hassan</h3>
+              <p class="profile-role">BSCS Undergraduate &amp; Cybersecurity Learner</p>
+              
+              <!-- Avatar Shape Selector -->
+              <div class="avatar-shape-selector" id="avatarShapeSelector">
+                <span class="shape-selector-label">FRAME:</span>
+                <div class="shape-btn-group">
+                  <button type="button" class="shape-btn active" data-shape="circle" title="Circular (LinkedIn Style)">⚪ Circle</button>
+                  <button type="button" class="shape-btn" data-shape="squircle" title="Rounded Squircle">▢ Rounded</button>
+                  <button type="button" class="shape-btn" data-shape="hexagon" title="Cyber Hexagon">⬡ Hexagon</button>
+                  <button type="button" class="shape-btn" data-shape="natural" title="Full Natural Photo">▭ Natural</button>
+                </div>
+              </div>
+
+              <div class="telemetry-grid">
+                <div class="telemetry-box">
+                  <span class="telemetry-val">BSCS</span>
+                  <span class="telemetry-label">UNDERGRAD</span>
+                </div>
+                <div class="telemetry-box">
+                  <span class="telemetry-val">Beginner</span>
+                  <span class="telemetry-label">CYBER LEARNER</span>
+                </div>
+                <div class="telemetry-box">
+                  <span class="telemetry-val">Founder</span>
+                  <span class="telemetry-label">SHILAJIT VENTURE</span>
+                </div>
+              </div>
+
+              <div class="card-footer-metrics">
+                <div class="metric-line">
+                  <span>LEARNING JOURNEY</span>
+                  <span>BUILDING FOUNDATIONS</span>
+                </div>
+                <div class="metric-bar">
+                  <div class="metric-progress" style="width: 50%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#about" class="scroll-down-indicator" aria-label="Scroll to About section">
+        <span class="mouse-icon">
+          <span class="mouse-wheel"></span>
+        </span>
+        <span class="scroll-text">EXPLORE PROFILE</span>
+      </a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="tag-bracket">[</span>
+            <span class="tag-num">01</span>
+            <span class="tag-title">ABOUT ME</span>
+            <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">About <span class="gradient-text">Shoaib Hassan</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card glass-panel">
+            <div class="card-bracket tl"></div>
+            <div class="card-bracket tr"></div>
+            <div class="card-bracket bl"></div>
+            <div class="card-bracket br"></div>
+
+            <div class="card-badge-header">
+              <span class="hud-chip">MY JOURNEY</span>
+              <span class="hud-time">LEARNING &amp; EXPLORATION</span>
+            </div>
+
+            <h3 class="about-card-heading">Curious Student, Passionate Learner</h3>
+            <p class="about-p">
+              Hi, I’m <strong>Shoaib Hassan</strong>. I am currently an undergraduate student pursuing a Bachelor of Science in Computer Science (BSCS) in Pakistan. I am at the early stages of my technical path—actively learning, experimenting, and building foundational skills in computer science and cybersecurity.
+            </p>
+            <p class="about-p">
+              Rather than presenting myself as a seasoned professional or specialist, I am a beginner actively learning cybersecurity fundamentals. I focus on learning bug bounty hunting, understanding common web security vulnerabilities, and exploring ethical defense principles. Every exercise is a learning step forward.
+            </p>
+            <p class="about-p">
+              Alongside technical studies, I am also a <strong>self content creator</strong> and enthusiast in <strong>SEO and social media strategy</strong>. I enjoy exploring how digital storytelling, keyword optimization, and organic social media can connect communities and share value.
+            </p>
+            <p class="about-p">
+              I am also the founder behind <a href="https://www.facebook.com/savorofbaltistan/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-primary);text-decoration:underline;"><strong>Savor of Baltistan</strong></a>, a small brand venture dedicated to sharing 100% <strong>Pure Himalayan Shilajit</strong> sustainably sourced from the alpine mountains of Baltistan with people seeking natural wellness. You can follow our journey directly on our <a href="https://www.facebook.com/savorofbaltistan/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-primary);text-decoration:underline;">official Facebook Page</a>.
+            </p>
+
+            <div class="specialty-tags">
+              <span class="tag-pill">BSCS Student</span>
+              <span class="tag-pill">Cybersecurity Learner</span>
+              <span class="tag-pill">Ethical Defense Basics</span>
+              <span class="tag-pill">Learning Bug Bounty</span>
+              <span class="tag-pill">Web Security Basics</span>
+              <span class="tag-pill">Content Creation</span>
+              <span class="tag-pill">SEO &amp; Social Media</span>
+              <span class="tag-pill">Savor of Baltistan</span>
+              <span class="tag-pill">Pure Himalayan Shilajit</span>
+            </div>
+          </div>
+
+          <div class="about-highlights-col">
+            <div class="highlight-card glass-panel">
+              <div class="highlight-icon">🌱</div>
+              <div class="highlight-body">
+                <h4>Beginner &amp; Hands-On Learner</h4>
+                <p>Focusing on fundamental computer science topics—understanding networking protocols, practicing Python scripts, and learning secure coding basics step-by-step.</p>
+              </div>
+            </div>
+
+            <div class="highlight-card glass-panel">
+              <div class="highlight-icon">🏔️</div>
+              <div class="highlight-body">
+                <h4>Savor of Baltistan</h4>
+                <p>Initiated a local wellness brand bringing pure Himalayan Shilajit from Gilgit-Baltistan to health enthusiasts. Connected via <a href="https://www.facebook.com/savorofbaltistan/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-primary);text-decoration:underline;">Facebook</a> and Instagram.</p>
+              </div>
+            </div>
+
+            <div class="highlight-card glass-panel">
+              <div class="highlight-icon">📈</div>
+              <div class="highlight-body">
+                <h4>Content Creation &amp; Social Media</h4>
+                <p>Learning organic social media algorithms, content production, and search engine optimization (SEO) to build genuine digital audiences.</p>
+              </div>
+            </div>
+
+            <div class="highlight-card glass-panel">
+              <div class="highlight-icon">🛡️</div>
+              <div class="highlight-body">
+                <h4>CodeAlpha Internship Experience</h4>
+                <p>Completed internship tasks involving Python network sniffing practice, mobile app vulnerability assessment checklists, and phishing awareness presentations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND SPOTLIGHT SECTION: SAVOR OF BALTISTAN -->
+    <section class="section brand-section" id="brand">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="tag-bracket">[</span>
+            <span class="tag-num">02</span>
+            <span class="tag-title">VENTURE &amp; BRAND</span>
+            <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">Savor of <span class="gradient-text">Baltistan</span></h2>
+          <p class="section-subtitle">A wellness initiative bringing authentic Pure Himalayan Shilajit from the alpine cliffs of Gilgit-Baltistan.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="brand-spotlight-card glass-panel">
+          <div class="brand-media-col">
+            <img src="assets/shilajeet.jpg" alt="Savor of Baltistan Pure Himalayan Shilajit" class="brand-img" loading="lazy">
+            <div class="brand-badge-overlay">100% PURE HIMALAYAN SHILAJIT</div>
+          </div>
+
+          <div class="brand-info-col">
+            <div class="brand-header-meta">
+              <div class="brand-logo-inline">
+                <img src="assets/savor_logo.jpg" alt="Savor of Baltistan Logo" class="brand-mini-logo">
+                <span class="brand-tag">SAVOR OF BALTISTAN</span>
+              </div>
+              <span class="brand-origin">ORIGIN: GILGIT-BALTISTAN</span>
+            </div>
+
+            <h3 class="brand-title">Savor of Baltistan — Pure Himalayan Shilajit</h3>
+            <p class="brand-desc">
+              <strong>Savor of Baltistan</strong> was created to share the natural goodness of high-altitude Himalayan Shilajit. Harvested from mountain rocks at high elevations, Shilajit (Salajeet) is a traditional natural substance known for its rich mineral content and fulvic acid.
+            </p>
+            <p class="brand-desc">
+              As the founder, I manage this venture from end to end—connecting with ethical collectors in Baltistan, handling packaging, learning e-commerce workflows, creating educational content, and growing our audience across Facebook and Instagram.
+            </p>
+
+            <div class="brand-features-grid">
+              <div class="bf-item">
+                <span class="bf-icon">🏔️</span>
+                <div>
+                  <strong>Mountain Harvested</strong>
+                  <p>Hand-collected from high-altitude rock faces in Gilgit-Baltistan.</p>
+                </div>
+              </div>
+              <div class="bf-item">
+                <span class="bf-icon">🌿</span>
+                <div>
+                  <strong>Natural Mineral Resin</strong>
+                  <p>Contains natural fulvic acid and trace minerals without artificial additives.</p>
+                </div>
+              </div>
+              <div class="bf-item">
+                <span class="bf-icon">📲</span>
+                <div>
+                  <strong>Social Media &amp; Content</strong>
+                  <p>Sharing awareness, customer experiences, and wellness benefits online.</p>
+                </div>
+              </div>
+              <div class="bf-item">
+                <span class="bf-icon">🤝</span>
+                <div>
+                  <strong>Customer Trust</strong>
+                  <p>Dedicated to delivering genuine quality directly to buyers.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="brand-actions">
+              <a href="https://www.facebook.com/savorofbaltistan/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <span class="btn-scan"></span>
+                <span class="btn-icon">📘</span>
+                <span>VISIT FACEBOOK PAGE</span>
+                <span class="ext-icon">&nearr;</span>
+              </a>
+              <a href="https://www.instagram.com/shoaibhassan_10" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <span>INSTAGRAM UPDATES</span>
+                <span class="ext-icon">&nearr;</span>
+              </a>
+              <a href="#contact" class="btn btn-cyber-sm">
+                <span>DIRECT INQUIRY</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="tag-bracket">[</span>
+            <span class="tag-num">03</span>
+            <span class="tag-title">PROJECTS &amp; PRACTICE</span>
+            <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">Learning <span class="gradient-text">Projects &amp; Work</span></h2>
+          <p class="section-subtitle">Beginner hands-on coding exercises, internship practice tasks, and my brand venture.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Items</button>
+          <button class="filter-btn" data-filter="brand">Brand Venture</button>
+          <button class="filter-btn" data-filter="network">Cybersecurity Practice</button>
+          <button class="filter-btn" data-filter="awareness">Awareness Project</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- CARD 1: Savor of Baltistan -->
+          <article class="project-card glass-panel" data-category="brand" id="projBrand">
+            <div class="project-media">
+              <img src="assets/shilajeet.jpg" alt="Savor of Baltistan Pure Himalayan Shilajit" class="project-img" loading="lazy">
+              <div class="media-overlay">
+                <button class="btn btn-quick-view" data-project="shilajeet" aria-label="Open Savor of Baltistan details">
+                  <span>VIEW DETAILS</span>
+                  <span class="arrow">&rarr;</span>
+                </button>
+              </div>
+              <div class="project-category-chip">BRAND &amp; SEO</div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-header-row">
+                <span class="project-repo-type">Founder Venture // Pure Shilajit</span>
+                <a href="https://www.facebook.com/savorofbaltistan/" target="_blank" rel="noopener noreferrer" class="repo-icon-link" title="Visit Facebook Page">
+                  <span>📘</span>
+                </a>
+              </div>
+
+              <h3 class="project-title">Savor of Baltistan — Pure Himalayan Shilajit</h3>
+              <p class="project-desc">
+                Founded and directed a natural wellness brand dedicated to pure Himalayan Shilajit. Executing content creation, social media presence, and organic SEO.
+              </p>
+
+              <div class="project-tags">
+                <span class="ptag">Himalayan Shilajit</span>
+                <span class="ptag">Content Creation</span>
+                <span class="ptag">Social Media</span>
+                <span class="ptag">SEO Learning</span>
+                <span class="ptag">Facebook &amp; IG</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="btn btn-secondary-sm modal-trigger" data-project="shilajeet">
+                  <span>Read Story</span>
+                </button>
+                <a href="https://www.facebook.com/savorofbaltistan/" target="_blank" rel="noopener noreferrer" class="btn btn-cyber-sm">
+                  <span>Facebook</span>
+                  <span class="ext-icon">&nearr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 2: Basic Network Sniffer -->
+          <article class="project-card glass-panel" data-category="network" id="projSniffer">
+            <div class="project-media">
+              <img src="assets/sniffer.jpg" alt="Basic Network Sniffer Python Dashboard" class="project-img" loading="lazy">
+              <div class="media-overlay">
+                <button class="btn btn-quick-view" data-project="sniffer" aria-label="Open Network Sniffer details">
+                  <span>VIEW DETAILS</span>
+                  <span class="arrow">&rarr;</span>
+                </button>
+              </div>
+              <div class="project-category-chip">LEARNING PROJECT</div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-header-row">
+                <span class="project-repo-type">Python Practice // CodeAlpha</span>
+                <a href="https://github.com/shoaibhassan10/Basic-Network-Sniffer-Code-Python" target="_blank" rel="noopener noreferrer" class="repo-icon-link" title="View Source on GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
+
+              <h3 class="project-title">Basic Network Sniffer (Python Practice)</h3>
+              <p class="project-desc">
+                A learning exercise written in Python to understand raw sockets, capture local network packets, and inspect basic IPv4, TCP, and UDP headers.
+              </p>
+
+              <div class="project-tags">
+                <span class="ptag">Python</span>
+                <span class="ptag">Sockets</span>
+                <span class="ptag">Networking Basics</span>
+                <span class="ptag">Packet Inspection</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="btn btn-secondary-sm modal-trigger" data-project="sniffer">
+                  <span>View Details</span>
+                </button>
+                <a href="https://github.com/shoaibhassan10/Basic-Network-Sniffer-Code-Python" target="_blank" rel="noopener noreferrer" class="btn btn-cyber-sm">
+                  <span>GitHub</span>
+                  <span class="ext-icon">&nearr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 3: Mobile Security Assessment -->
+          <article class="project-card glass-panel" data-category="network" id="projMobile">
+            <div class="project-media">
+              <img src="assets/mobile-sec.jpg" alt="Mobile Application Security Assessment Dashboard" class="project-img" loading="lazy">
+              <div class="media-overlay">
+                <button class="btn btn-quick-view" data-project="mobile" aria-label="Open Mobile Security details">
+                  <span>VIEW DETAILS</span>
+                  <span class="arrow">&rarr;</span>
+                </button>
+              </div>
+              <div class="project-category-chip">LEARNING AUDIT</div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-header-row">
+                <span class="project-repo-type">Beginner Assessment // CodeAlpha</span>
+                <a href="https://github.com/shoaibhassan10/Mobile-Application-Security-Assessment-CodeAlpha-Cyber-Security-" target="_blank" rel="noopener noreferrer" class="repo-icon-link" title="View Source on GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
+
+              <h3 class="project-title">Mobile Application Security Assessment</h3>
+              <p class="project-desc">
+                An introductory assessment report examining common mobile vulnerabilities (such as unencrypted data storage and exposed activities) guided by OWASP Mobile Top 10 recommendations.
+              </p>
+
+              <div class="project-tags">
+                <span class="ptag">OWASP Mobile</span>
+                <span class="ptag">Android Basics</span>
+                <span class="ptag">Static Analysis</span>
+                <span class="ptag">Learning Checklist</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="btn btn-secondary-sm modal-trigger" data-project="mobile">
+                  <span>View Details</span>
+                </button>
+                <a href="https://github.com/shoaibhassan10/Mobile-Application-Security-Assessment-CodeAlpha-Cyber-Security-" target="_blank" rel="noopener noreferrer" class="btn btn-cyber-sm">
+                  <span>GitHub</span>
+                  <span class="ext-icon">&nearr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 4: Phishing Awareness Training -->
+          <article class="project-card glass-panel" data-category="awareness" id="projPhishing">
+            <div class="project-media">
+              <img src="assets/phishing.jpg" alt="Phishing Awareness Training Module" class="project-img" loading="lazy">
+              <div class="media-overlay">
+                <button class="btn btn-quick-view" data-project="phishing" aria-label="Open Phishing Training details">
+                  <span>VIEW DETAILS</span>
+                  <span class="arrow">&rarr;</span>
+                </button>
+              </div>
+              <div class="project-category-chip">AWARENESS MODULE</div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-header-row">
+                <span class="project-repo-type">Internship Project // CodeAlpha</span>
+                <a href="https://github.com/shoaibhassan10/PHISHING-AWARENESS-TRAINING-" target="_blank" rel="noopener noreferrer" class="repo-icon-link" title="View Source on GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
+
+              <h3 class="project-title">Phishing Awareness Training Module</h3>
+              <p class="project-desc">
+                An educational presentation and guide outlining common signs of phishing emails, deceptive URLs, and safe digital browsing habits.
+              </p>
+
+              <div class="project-tags">
+                <span class="ptag">Phishing Defense</span>
+                <span class="ptag">Email Safety</span>
+                <span class="ptag">Awareness</span>
+                <span class="ptag">Digital Hygiene</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="btn btn-secondary-sm modal-trigger" data-project="phishing">
+                  <span>View Details</span>
+                </button>
+                <a href="https://github.com/shoaibhassan10/PHISHING-AWARENESS-TRAINING-" target="_blank" rel="noopener noreferrer" class="btn btn-cyber-sm">
+                  <span>GitHub</span>
+                  <span class="ext-icon">&nearr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION SECTION -->
+    <section class="section timeline-section" id="experience">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="tag-bracket">[</span>
+            <span class="tag-num">04</span>
+            <span class="tag-title">TIMELINE</span>
+            <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">Education &amp; <span class="gradient-text">Experience</span></h2>
+          <p class="section-subtitle">Academic foundations, internship practice, and entrepreneurial learning.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-center-line"></div>
+
+          <!-- Timeline 1: Savor of Baltistan -->
+          <div class="timeline-item left">
+            <div class="timeline-node">
+              <span class="node-icon">🏔️</span>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-date">2024 – PRESENT</div>
+              <h3 class="timeline-title">Founder &amp; Brand Owner</h3>
+              <h4 class="timeline-org">Savor of Baltistan (Pure Himalayan Shilajit)</h4>
+              <p class="timeline-body">
+                Initiated and managing an authentic Himalayan superfood venture:
+              </p>
+              <ul class="timeline-list">
+                <li>Managing product sourcing, customer communication, and packaging.</li>
+                <li>Learning and applying SEO basics and content creation on <a href="https://www.facebook.com/savorofbaltistan/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-primary);">Facebook</a> and Instagram.</li>
+                <li>Educating people about pure Shilajit resin and natural wellness.</li>
+              </ul>
+              <div class="timeline-chips">
+                <span class="tchip">Brand Building</span>
+                <span class="tchip">Facebook Page</span>
+                <span class="tchip">Instagram</span>
+                <span class="tchip">Pure Shilajit</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline 2: CodeAlpha Internship -->
+          <div class="timeline-item right">
+            <div class="timeline-node">
+              <span class="node-icon">🛡️</span>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-date">SEPTEMBER 2024 – OCTOBER 2024</div>
+              <h3 class="timeline-title">Cyber Security Intern</h3>
+              <h4 class="timeline-org">CodeAlpha · Remote (Internship)</h4>
+              <p class="timeline-body">
+                Completed hands-on learning tasks focused on foundational cybersecurity:
+              </p>
+              <ul class="timeline-list">
+                <li>Practiced building a basic packet sniffer script in Python using raw sockets.</li>
+                <li>Reviewed beginner security audit checklists for mobile apps referencing the OWASP Mobile Top 10.</li>
+                <li>Created educational training slides on recognizing phishing and deceptive links.</li>
+              </ul>
+              <div class="timeline-chips">
+                <span class="tchip">Python Practice</span>
+                <span class="tchip">Networking Basics</span>
+                <span class="tchip">Mobile Security</span>
+                <span class="tchip">Internship</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline 3: BSCS Undergraduate -->
+          <div class="timeline-item left">
+            <div class="timeline-node">
+              <span class="node-icon">🎓</span>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-date">PRESENT · UNDERGRADUATE</div>
+              <h3 class="timeline-title">Bachelor of Science in Computer Science (BSCS)</h3>
+              <h4 class="timeline-org">University Degree Program · Pakistan</h4>
+              <p class="timeline-body">
+                Currently studying core computer science subjects:
+              </p>
+              <ul class="timeline-list">
+                <li>Courses: Programming Fundamentals, Data Structures, Computer Networks, Operating Systems.</li>
+                <li>Actively building fundamental knowledge and exploring areas of interest.</li>
+              </ul>
+              <div class="timeline-chips">
+                <span class="tchip">Computer Science</span>
+                <span class="tchip">Networks</span>
+                <span class="tchip">Operating Systems</span>
+                <span class="tchip">Undergraduate</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline 4: High School Graduation -->
+          <div class="timeline-item right">
+            <div class="timeline-node">
+              <span class="node-icon">📚</span>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-date">COMPLETED</div>
+              <h3 class="timeline-title">High School Graduate</h3>
+              <h4 class="timeline-org">Pre-Engineering / Computer Studies</h4>
+              <p class="timeline-body">
+                Completed high school studies with a focus on mathematics and computer basics, sparking my passion for computers, technology, and learning.
+              </p>
+              <div class="timeline-chips">
+                <span class="tchip">Mathematics</span>
+                <span class="tchip">Computer Studies</span>
+                <span class="tchip">Foundations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS MATRIX SECTION (LEARNING PROGRESSION) -->
+    <section class="section skills-section" id="skills">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="tag-bracket">[</span>
+            <span class="tag-num">05</span>
+            <span class="tag-title">SKILLS &amp; LEARNING</span>
+            <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">Skills &amp; <span class="gradient-text">Learning Areas</span></h2>
+          <p class="section-subtitle">Areas I am actively learning, practicing, and building practical foundations in.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill Category 1: Security Learning -->
+          <div class="skill-category-card glass-panel">
+            <div class="category-header">
+              <span class="cat-icon">🛡️</span>
+              <div>
+                <h3>Cybersecurity Fundamentals</h3>
+                <span class="cat-subtitle">Learning in progress</span>
+              </div>
+            </div>
+            <div class="skill-items">
+              <div class="skill-bar-item">
+                <div class="sb-info"><span>Bug Bounty Hunting</span><span>Learning</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width: 50%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span>Web Application Security Basics</span><span>Learning</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width: 45%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span>Phishing Awareness &amp; Social Engineering</span><span>Practicing</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width: 65%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span>Vulnerability Assessment Concepts</span><span>Learning</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width: 50%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Category 2: Content & SEO -->
+          <div class="skill-category-card glass-panel">
+            <div class="category-header">
+              <span class="cat-icon">📈</span>
+              <div>
+                <h3>Content &amp; Social Media</h3>
+                <span class="cat-subtitle">Self-taught &amp; brand growth</span>
+              </div>
+            </div>
+            <div class="skill-items">
+              <div class="skill-bar-item">
+                <div class="sb-info"><span>On-Page &amp; Keyword SEO Basics</span><span>Practicing</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width: 60%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span>Social Media Content Creation (IG/FB)</span><span>Practicing</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width: 65%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span>Brand Presentation &amp; Packaging</span><span>Active</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width: 70%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span>Audience Communication</span><span>Practicing</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width: 65%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Category 3: Programming -->
+          <div class="skill-category-card glass-panel">
+            <div class="category-header">
+              <span class="cat-icon">⚡</span>
+              <div>
+                <h3>Programming Basics</h3>
+                <span class="cat-subtitle">Coursework &amp; practice</span>
+              </div>
+            </div>
+            <div class="skill-items">
+              <div class="skill-bar-item">
+                <div class="sb-info"><span>Python (Sockets &amp; Scripting)</span><span>Practicing</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width: 65%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span>C++ Programming Concepts</span><span>Coursework</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width: 55%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span>HTML &amp; CSS Basics</span><span>Practicing</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width: 60%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span>Linux Command Line</span><span>Learning</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width: 50%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Category 4: Tools -->
+          <div class="skill-category-card glass-panel">
+            <div class="category-header">
+              <span class="cat-icon">🧰</span>
+              <div>
+                <h3>Tools Explored</h3>
+                <span class="cat-subtitle">Hands-on practice</span>
+              </div>
+            </div>
+            <div class="tool-badges-grid">
+              <div class="tool-badge">
+                <span class="tb-name">Wireshark</span>
+                <span class="tb-desc">Packet Analysis</span>
+              </div>
+              <div class="tool-badge">
+                <span class="tb-name">Burp Suite</span>
+                <span class="tb-desc">Bug Bounty / Proxy</span>
+              </div>
+              <div class="tool-badge">
+                <span class="tb-name">VS Code</span>
+                <span class="tb-desc">Code Editor</span>
+              </div>
+              <div class="tool-badge">
+                <span class="tb-name">Git &amp; GitHub</span>
+                <span class="tb-desc">Version Control</span>
+              </div>
+              <div class="tool-badge">
+                <span class="tb-name">Facebook / Meta</span>
+                <span class="tb-desc">Page Management</span>
+              </div>
+              <div class="tool-badge">
+                <span class="tb-name">Instagram</span>
+                <span class="tb-desc">Content Sharing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE TERMINAL WIDGET -->
+    <section class="section terminal-section" id="terminal">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="tag-bracket">[</span>
+            <span class="tag-num">06</span>
+            <span class="tag-title">INTERACTIVE CONSOLE</span>
+            <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">Interactive <span class="gradient-text">Terminal</span></h2>
+          <p class="section-subtitle">Type commands to learn more about my background, learning projects, brand venture, or contact info.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="terminal-wrapper glass-panel">
+          <div class="terminal-bar">
+            <div class="terminal-buttons">
+              <span class="t-btn t-close"></span>
+              <span class="t-btn t-min"></span>
+              <span class="t-btn t-max"></span>
+            </div>
+            <div class="terminal-title">shoaib@student-terminal:~ (zsh)</div>
+            <div class="terminal-hud-status">STATUS: ONLINE</div>
+          </div>
+
+          <div class="terminal-body" id="terminalBody">
+            <div class="t-line t-banner">
+              <pre class="ascii-art">
+   _____ __  ______    ___    ________     ____  ______ _    __
+  / ___// / / / __ \  /   |  /  _/ __ )   / __ \/ ____/| |  / /
+  \__ \/ /_/ / / / / / /| |  / // __  |  / / / / __/   | | / / 
+ ___/ / __  / /_/ / / ___ |_/ // /_/ /  / /_/ / /___   | |/ /  
+/____/_/ /_/\____/ /_/  |_/___/_____/  /_____/_____/   |___/   
+              </pre>
+              <p class="t-welcome">Shoaib Hassan — Interactive Student Console v2.6.0</p>
+              <p class="t-welcome-sub">Type <span class="t-highlight">'help'</span> to see available commands or click the shortcut buttons below.</p>
+            </div>
+
+            <!-- Terminal output history -->
+            <div id="terminalHistory"></div>
+
+            <!-- Active Input Line -->
+            <div class="terminal-input-row">
+              <span class="t-prompt">shoaib@student:~$</span>
+              <input type="text" id="terminalInput" class="t-input" autocomplete="off" spellcheck="false" placeholder="type a command (e.g. help, brand, about, projects)..." aria-label="Terminal command input">
+            </div>
+          </div>
+
+          <!-- Terminal Shortcut Badges -->
+          <div class="terminal-shortcuts">
+            <span class="ts-label">COMMANDS:</span>
+            <button class="ts-btn" data-cmd="help">help</button>
+            <button class="ts-btn" data-cmd="about">about</button>
+            <button class="ts-btn" data-cmd="brand">brand</button>
+            <button class="ts-btn" data-cmd="projects">projects</button>
+            <button class="ts-btn" data-cmd="skills">skills</button>
+            <button class="ts-btn" data-cmd="socials">socials</button>
+            <button class="ts-btn" data-cmd="contact">contact</button>
+            <button class="ts-btn" data-cmd="clear">clear</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="tag-bracket">[</span>
+            <span class="tag-num">07</span>
+            <span class="tag-title">COMMUNICATION</span>
+            <span class="tag-bracket">]</span>
+          </div>
+          <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+          <p class="section-subtitle">Have a question, feedback, an opportunity for a student, or want to inquire about Savor of Baltistan? Feel free to reach out.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Column: Direct Coordinates -->
+          <div class="contact-info-col">
+            <div class="contact-info-card glass-panel">
+              <div class="card-bracket tl"></div>
+              <div class="card-bracket tr"></div>
+              
+              <h3 class="info-card-title">Connect with Me</h3>
+              <p class="info-card-desc">
+                Feel free to email me directly or connect through my social profiles.
+              </p>
+
+              <div class="channel-list">
+                <a href="https://www.linkedin.com/in/shoaibhassan10/" target="_blank" rel="noopener noreferrer" class="channel-item">
+                  <div class="ci-icon">💼</div>
+                  <div class="ci-details">
+                    <span class="ci-name">LinkedIn</span>
+                    <span class="ci-val">linkedin.com/in/shoaibhassan10</span>
+                  </div>
+                  <span class="ci-arrow">&rarr;</span>
+                </a>
+
+                <a href="https://www.facebook.com/savorofbaltistan/" target="_blank" rel="noopener noreferrer" class="channel-item">
+                  <div class="ci-icon">📘</div>
+                  <div class="ci-details">
+                    <span class="ci-name">Facebook (Savor of Baltistan)</span>
+                    <span class="ci-val">facebook.com/savorofbaltistan</span>
+                  </div>
+                  <span class="ci-arrow">&rarr;</span>
+                </a>
+
+                <a href="https://www.instagram.com/shoaibhassan_10" target="_blank" rel="noopener noreferrer" class="channel-item">
+                  <div class="ci-icon">📸</div>
+                  <div class="ci-details">
+                    <span class="ci-name">Instagram</span>
+                    <span class="ci-val">instagram.com/shoaibhassan_10</span>
+                  </div>
+                  <span class="ci-arrow">&rarr;</span>
+                </a>
+
+                <a href="https://github.com/shoaibhassan10" target="_blank" rel="noopener noreferrer" class="channel-item">
+                  <div class="ci-icon">🐙</div>
+                  <div class="ci-details">
+                    <span class="ci-name">GitHub</span>
+                    <span class="ci-val">github.com/shoaibhassan10</span>
+                  </div>
+                  <span class="ci-arrow">&rarr;</span>
+                </a>
+
+                <div class="channel-item static">
+                  <div class="ci-icon">📍</div>
+                  <div class="ci-details">
+                    <span class="ci-name">Location</span>
+                    <span class="ci-val">Pakistan</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Copy Email Component -->
+              <div class="quick-copy-box">
+                <span class="qc-label">EMAIL ADDRESS:</span>
+                <div class="qc-row">
+                  <span class="qc-email" id="emailToCopy">shoaib.hassan520562@gmail.com</span>
+                  <button class="btn btn-copy" id="btnCopyEmail" title="Copy to clipboard">
+                    <span id="copyBtnText">COPY</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Form -->
+          <div class="contact-form-col">
+            <form class="contact-form glass-panel" id="contactForm" novalidate>
+              <div class="form-hud-header">
+                <span class="f-code">MESSAGE FORM</span>
+                <span class="f-ping">DIRECT OUTREACH</span>
+              </div>
+
+              <div class="form-group">
+                <label for="senderName" class="form-label">YOUR NAME <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <input type="text" id="senderName" name="name" class="form-input" placeholder="e.g. Alex Morgan" required>
+                  <span class="input-glow"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="senderEmail" class="form-label">YOUR EMAIL ADDRESS <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <input type="email" id="senderEmail" name="email" class="form-input" placeholder="e.g. alex@example.com" required>
+                  <span class="input-glow"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="senderSubject" class="form-label">SUBJECT <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <input type="text" id="senderSubject" name="subject" class="form-input" placeholder="e.g. Student Opportunity, Shilajit Inquiry, or Hello" required>
+                  <span class="input-glow"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="senderMessage" class="form-label">MESSAGE <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <textarea id="senderMessage" name="message" rows="5" class="form-input form-textarea" placeholder="Type your message here..." required></textarea>
+                  <span class="input-glow"></span>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit" id="btnSubmitMessage">
+                <span class="btn-scan"></span>
+                <span class="btn-icon">🚀</span>
+                <span>SEND MESSAGE</span>
+              </button>
+
+              <div class="form-status" id="formStatus" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PROJECT & BRAND DOSSIER MODAL -->
+  <div class="modal-backdrop" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card glass-panel">
+      <div class="modal-hud-bar">
+        <span class="modal-hud-title" id="modalHudTitle">PROJECT OVERVIEW</span>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-content-area" id="modalContentArea">
+        <!-- Injected via JavaScript based on selected item -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toastContainer" aria-live="assertive"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-logo">
+            <span class="logo-bracket">&lt;</span>
+            <span class="logo-text">SHOAIB</span>
+            <span class="logo-dot">.</span>
+            <span class="logo-badge">LEARNER</span>
+            <span class="logo-bracket">/&gt;</span>
+          </span>
+          <p class="footer-tagline">BSCS Student · Cybersecurity Learner · Content Creator · Founder of Savor of Baltistan</p>
+        </div>
+
+        <div class="footer-social-links">
+          <a href="https://www.linkedin.com/in/shoaibhassan10/" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/savorofbaltistan/" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/shoaibhassan_10" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://github.com/shoaibhassan10" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Shoaib Hassan. Built with modern web standards and learning enthusiasm.</p>
+        <div class="footer-metrics">
+          <span class="status-indicator-sm"></span>
+          <span>LOCATION: PAKISTAN // OPEN TO LEARNING &amp; STUDENT OPPORTUNITIES</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
