@@ -24,6 +24,23 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Universal Image Path Resolver (Seamlessly handles both assets/ and root paths) -->
+  <script>
+    window.addEventListener('error', function(e) {
+      if (e.target && e.target.tagName === 'IMG') {
+        var img = e.target;
+        if (img.dataset.fallbackTried) return;
+        img.dataset.fallbackTried = '1';
+        if (img.src.indexOf('/assets/') !== -1) {
+          img.src = img.src.replace('/assets/', '/');
+        } else {
+          var p = img.src.lastIndexOf('/');
+          img.src = img.src.substring(0, p) + '/assets/' + img.src.substring(p + 1);
+        }
+      }
+    }, true);
+  </script>
 </head>
 <body data-theme="cyan">
   <!-- Interactive Canvas Backdrop -->
@@ -203,7 +220,7 @@
             </div>
 
             <div class="avatar-frame" id="avatarDropZone" title="Drag & drop your LinkedIn profile picture here">
-              <img src="avatar.jpg" alt="Shoaib Hassan" id="heroAvatarImg" class="avatar-img" loading="eager">
+              <img src="assets/avatar.jpg" alt="Shoaib Hassan" id="heroAvatarImg" class="avatar-img" loading="eager">
               <div class="scan-grid"></div>
             </div>
 
