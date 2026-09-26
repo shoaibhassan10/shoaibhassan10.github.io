@@ -90,6 +90,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 20px);
   color-scheme: dark;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -98,6 +100,7 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
   position: relative;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -501,12 +504,13 @@ a {
   transition: all var(--transition-normal);
 }
 
-/* --- MOBILE DRAWER --- */
+/* --- MOBILE DRAWER & OVERLAY --- */
 .mobile-drawer {
   position: fixed;
   top: 0;
-  right: -320px;
-  width: 300px;
+  right: -340px;
+  width: min(320px, 86vw);
+  max-width: 100vw;
   height: 100vh;
   background: var(--bg-secondary);
   border-left: 1px solid var(--glass-border);
@@ -521,6 +525,23 @@ a {
 
 .mobile-drawer.open {
   right: 0;
+}
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 12, 18, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.drawer-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .drawer-header {
@@ -1355,7 +1376,7 @@ main {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
   gap: 32px;
 }
 
@@ -2381,8 +2402,49 @@ main {
   to { transform: translateX(0); opacity: 1; }
 }
 
-/* --- RESPONSIVE MEDIA QUERIES --- */
+/* ==========================================================================
+   COMPREHENSIVE RESPONSIVE DESIGN SYSTEM (MOBILE, TABLET & DESKTOP)
+   ========================================================================== */
+
+/* --- 1. LARGE DESKTOP & WIDE MONITORS (1440px+) --- */
+@media (min-width: 1440px) {
+  :root {
+    --container-max: 1280px;
+  }
+  .section {
+    padding: 120px 0;
+  }
+}
+
+/* --- 2. DESKTOPS & LAPTOPS (1025px - 1439px) --- */
+@media (max-width: 1200px) {
+  .hero-container {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 40px;
+  }
+  .about-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 28px;
+  }
+  .brand-spotlight-card {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 32px;
+    padding: 30px;
+  }
+}
+
+/* --- 3. LARGE TABLETS & SMALL LAPTOPS (max-width: 1024px) --- */
 @media (max-width: 1024px) {
+  .section {
+    padding: 85px 0;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--header-height) + 30px);
+    padding-bottom: 50px;
+    min-height: auto;
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -2393,6 +2455,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-bio {
+    max-width: 650px;
   }
 
   .hero-meta-strip {
@@ -2407,20 +2473,39 @@ main {
     justify-content: center;
   }
 
+  .hero-visual {
+    width: 100%;
+  }
+
+  .cyber-card-tilt {
+    max-width: 440px;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .brand-spotlight-card {
     grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 28px;
   }
 
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
   }
 }
 
+/* --- 4. TABLETS (PORTRAIT) & NARROW VIEWPORTS (max-width: 820px) --- */
 @media (max-width: 820px) {
+  /* Navbar */
   .nav-menu,
   .sound-toggle,
   #btnNavConnect {
@@ -2431,15 +2516,37 @@ main {
     display: flex;
   }
 
-  /* Timeline mobile linear */
+  .nav-actions {
+    gap: 12px;
+  }
+
+  /* Headings & Texts */
+  .section-title {
+    font-size: clamp(1.9rem, 4vw, 2.3rem);
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.3rem, 5.5vw, 3.2rem);
+  }
+
+  .typewriter-container {
+    justify-content: center;
+  }
+
+  /* Timeline mobile single-sided layout */
   .timeline-center-line {
-    left: 20px;
+    left: 24px;
   }
 
   .timeline-item {
     width: 100%;
-    padding-left: 60px;
+    padding-left: 64px;
     padding-right: 0;
+    margin-bottom: 32px;
   }
 
   .timeline-item.left,
@@ -2450,40 +2557,534 @@ main {
 
   .timeline-item.left .timeline-node,
   .timeline-item.right .timeline-node {
-    left: 2px;
+    left: 4px;
     right: auto;
   }
 
-  .section-title {
-    font-size: 2.1rem;
-  }
-
-  .hero-title {
-    font-size: 2.4rem;
-  }
-
+  /* Brand Features */
   .brand-features-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Terminal Window */
+  .terminal-wrapper {
+    max-width: 100%;
+  }
+
+  .terminal-body {
+    padding: 18px 16px;
+    min-height: 320px;
+    max-height: 420px;
+    font-size: 0.8rem;
+  }
+
+  .terminal-shortcuts {
+    padding: 10px 14px;
+  }
+
+  /* Modal */
+  .modal-card {
+    max-width: 640px;
+    max-height: 88vh;
+  }
+
+  .modal-content-area {
+    padding: 24px 20px;
   }
 }
 
-@media (max-width: 480px) {
-  .section {
-    padding: 70px 0;
+/* --- 5. MOBILE LANDSCAPE & PHONES (max-width: 640px) --- */
+@media (max-width: 640px) {
+  :root {
+    --header-height: 68px;
   }
 
-  .about-card,
-  .brand-spotlight-card,
-  .contact-form,
-  .contact-info-card {
-    padding: 22px;
+  .section {
+    padding: 65px 0;
+  }
+
+  .section-container,
+  .hero-container,
+  .nav-container,
+  .footer-container {
+    padding: 0 18px;
+  }
+
+  /* Hero adjustments */
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-meta-strip {
+    gap: 8px;
+  }
+
+  .meta-item {
+    font-size: 0.78rem;
+    padding: 5px 10px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 380px;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+  }
+
+  .social-strip {
+    gap: 8px;
+  }
+
+  .social-chip {
+    padding: 6px 11px;
+    font-size: 0.78rem;
+  }
+
+  /* Avatar Card */
+  .cyber-card-tilt {
+    padding: 20px 16px;
+    max-width: 100%;
+  }
+
+  .avatar-frame {
+    width: min(200px, 55vw);
+    height: min(200px, 55vw);
+  }
+
+  .avatar-frame.shape-circle,
+  .avatar-frame.shape-squircle {
+    width: min(200px, 55vw);
+    height: min(200px, 55vw);
+  }
+
+  .avatar-frame.shape-hexagon {
+    width: min(200px, 55vw);
+    height: min(210px, 58vw);
+  }
+
+  .avatar-shape-selector {
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .shape-btn-group {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .shape-btn {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+  }
+
+  /* About Card */
+  .about-card {
+    padding: 24px 18px;
+  }
+
+  .about-card-heading {
+    font-size: 1.4rem;
+  }
+
+  .about-p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .specialty-tags {
+    gap: 8px;
+    margin-top: 20px;
+    padding-top: 18px;
+  }
+
+  .tag-pill {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+
+  .highlight-card {
+    padding: 18px 14px;
+    gap: 14px;
+  }
+
+  .highlight-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+
+  /* Brand Savor of Baltistan */
+  .brand-spotlight-card {
+    padding: 22px 16px;
+  }
+
+  .brand-title {
+    font-size: 1.45rem;
+    line-height: 1.25;
+  }
+
+  .brand-header-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .brand-cta-row {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .brand-cta-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Projects Filter Bar Horizontal Scroll */
+  .projects-filter-bar {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .projects-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 8px 14px;
+    font-size: 0.78rem;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .project-content {
+    padding: 20px 16px;
+  }
+
+  .project-footer {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .project-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Skills Section */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skill-category-card {
+    padding: 22px 16px;
   }
 
   .tool-badges-grid {
     grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* Interactive Terminal */
+  .terminal-bar {
+    padding: 10px 14px;
+  }
+
+  .terminal-hud-status {
+    font-size: 0.65rem;
+  }
+
+  .terminal-body {
+    padding: 14px 12px;
+    min-height: 280px;
+    max-height: 380px;
+    font-size: 0.76rem;
+  }
+
+  .terminal-output pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .terminal-input-row {
+    gap: 6px;
+  }
+
+  .t-prompt {
+    font-size: 0.75rem;
+  }
+
+  .terminal-input {
+    font-size: 0.78rem;
+  }
+
+  .terminal-shortcuts {
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .ts-btn {
+    font-size: 0.7rem;
+    padding: 5px 8px;
+  }
+
+  /* Contact Section */
+  .contact-info-card,
+  .contact-form {
+    padding: 22px 16px;
+  }
+
+  .info-card-title {
+    font-size: 1.35rem;
+  }
+
+  .contact-method-item {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .cm-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .cm-val {
+    font-size: 0.82rem;
+    word-break: break-all;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px;
+  }
+
+  /* Project Modal */
+  .modal-backdrop {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .modal-card {
+    max-height: 90vh;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .modal-hud-bar {
+    padding: 12px 16px;
+  }
+
+  .modal-content-area {
+    padding: 18px 14px;
+  }
+
+  .modal-media-banner {
+    margin-bottom: 16px;
+  }
+
+  .modal-media-banner img {
+    max-height: 200px;
+  }
+
+  .modal-title {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .modal-text {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .modal-code-snippet {
+    padding: 12px;
+    font-size: 0.72rem;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 16px;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding-bottom: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    padding-top: 20px;
+  }
+
+  .footer-metrics {
+    justify-content: center;
+  }
+}
+
+/* --- 6. ULTRA-COMPACT MOBILE PHONES (max-width: 440px) --- */
+@media (max-width: 440px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .section-container,
+  .hero-container,
+  .nav-container,
+  .footer-container {
+    padding: 0 14px;
+  }
+
+  /* Brand Logo in Navbar */
+  .brand-logo {
+    font-size: 1.02rem;
+    gap: 2px;
+  }
+
+  .logo-badge {
+    display: none;
+  }
+
+  .theme-switcher {
+    padding: 4px 7px;
+    gap: 6px;
+  }
+
+  .theme-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Timeline ultra-compact */
+  .timeline-center-line {
+    left: 14px;
+  }
+
+  .timeline-item {
+    padding-left: 42px;
+    margin-bottom: 24px;
+  }
+
+  .timeline-node {
+    left: -4px !important;
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  .timeline-card {
+    padding: 16px 12px;
+  }
+
+  .timeline-title {
+    font-size: 1.05rem;
+  }
+
+  .timeline-role {
+    font-size: 0.8rem;
+  }
+
+  .timeline-list li {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  /* Compact Cards */
+  .about-card,
+  .brand-spotlight-card,
+  .contact-form,
+  .contact-info-card,
+  .cyber-card-tilt {
+    padding: 18px 12px;
+    border-radius: var(--radius-sm);
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .avatar-frame {
+    width: 175px;
+    height: 175px;
+  }
+
+  .avatar-frame.shape-circle,
+  .avatar-frame.shape-squircle {
+    width: 175px;
+    height: 175px;
+  }
+
+  .avatar-frame.shape-hexagon {
+    width: 175px;
+    height: 185px;
+  }
+
+  /* Mobile Drawer full safety */
+  .mobile-drawer {
+    width: min(290px, 86vw);
+    padding: 20px 16px;
+  }
+
+  .drawer-links {
+    margin: 20px 0;
+    gap: 14px;
+  }
+
+  .drawer-link {
+    font-size: 0.9rem;
   }
 }
