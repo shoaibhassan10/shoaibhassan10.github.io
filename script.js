@@ -491,27 +491,49 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
   const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+  const drawerOverlay = document.getElementById('drawerOverlay');
   const drawerLinks = document.querySelectorAll('.drawer-link');
+
+  function openMobileDrawer() {
+    if (!mobileDrawer) return;
+    mobileDrawer.classList.add('open');
+    if (drawerOverlay) drawerOverlay.classList.add('active');
+    if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'true');
+    playSoftBlip();
+  }
+
+  function closeMobileDrawer() {
+    if (!mobileDrawer) return;
+    mobileDrawer.classList.remove('open');
+    if (drawerOverlay) drawerOverlay.classList.remove('active');
+    if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
+  }
 
   if (hamburgerBtn && mobileDrawer) {
     hamburgerBtn.addEventListener('click', () => {
-      mobileDrawer.classList.add('open');
-      hamburgerBtn.setAttribute('aria-expanded', 'true');
-      playSoftBlip();
+      if (mobileDrawer.classList.contains('open')) {
+        closeMobileDrawer();
+      } else {
+        openMobileDrawer();
+      }
     });
 
     if (closeDrawerBtn) {
-      closeDrawerBtn.addEventListener('click', () => {
-        mobileDrawer.classList.remove('open');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-      });
+      closeDrawerBtn.addEventListener('click', closeMobileDrawer);
+    }
+
+    if (drawerOverlay) {
+      drawerOverlay.addEventListener('click', closeMobileDrawer);
     }
 
     drawerLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileDrawer.classList.remove('open');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeMobileDrawer);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+        closeMobileDrawer();
+      }
     });
   }
 
